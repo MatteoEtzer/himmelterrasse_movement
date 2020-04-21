@@ -7,6 +7,8 @@ public class movement : MonoBehaviour {
     public float movementSpeed;
     public GameObject ObjectToBeCloned;
     public Vector3 move;
+    public int minZ;
+    public int maxZ;  
     
  
     // Use this for initialization
@@ -44,8 +46,12 @@ public class movement : MonoBehaviour {
         {
             if (collision.gameObject.tag == "Tree")
             {
-                Instantiate(ObjectToBeCloned, collision.gameObject.transform.position + move, transform.rotation);
+                GameObject tree = Instantiate(ObjectToBeCloned, collision.gameObject.transform.position + move, transform.rotation);
                 //collision.gameObject.GetComponent<Collider>().enabled = false;
+                GameObject text = tree.transform.Find("Profile_Text").gameObject;
+                Vector3 posText = text.transform.position;
+                Vector3 newPosText = new Vector3(posText.x, posText.y + Random.Range(-1,1), posText.z);
+                text.transform.position = newPosText;
             } 
         }
         
