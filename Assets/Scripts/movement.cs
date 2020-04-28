@@ -11,13 +11,15 @@ public class movement : MonoBehaviour {
     public int minZ;
     public int maxZ;  
 
-    public Button SearchButton;
-    public Transform target;
+    public Transform CloudTarget;
+    public Transform TreeTarget;
     public float smoothTime = 0.3F;
     private Vector3 velocity = Vector3.zero;
     public bool SearchButtonClicked = false;
+    public bool ReturnButtonClicked = false;
 
     public string[] Namensliste;
+    
     
     
     void Start () 
@@ -48,10 +50,15 @@ public class movement : MonoBehaviour {
         }
         if (SearchButtonClicked == true)
         {
-            Vector3 targetPosition = target.TransformPoint(new Vector3(0, 0, 0));
+            Vector3 targetPosition = CloudTarget.TransformPoint(new Vector3(0, 0, 0));
+            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+            
+        }
+        if (ReturnButtonClicked == true)
+        {
+            Vector3 targetPosition = TreeTarget.TransformPoint(new Vector3(0, 0, 0));
             transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
         }
-        
     }
 
     void OnTriggerEnter(Collider collision)
@@ -71,7 +78,10 @@ public class movement : MonoBehaviour {
         SearchButtonClicked = true;
         Debug.Log("Button clicked");
     }   
-        
+    public void ReturnToTree()
+    {
+        ReturnButtonClicked = true;
+    }    
 }
 
 
