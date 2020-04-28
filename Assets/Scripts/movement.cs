@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class movement : MonoBehaviour {
  
@@ -9,7 +10,8 @@ public class movement : MonoBehaviour {
     public Vector3 move;
     public int minZ;
     public int maxZ;  
-    
+    public Button SearchButton;
+
  
     // Use this for initialization
     void Start () 
@@ -42,7 +44,7 @@ public class movement : MonoBehaviour {
        
     }
 
-     void OnTriggerEnter(Collider collision)
+    void OnTriggerEnter(Collider collision)
         {
             if (collision.gameObject.tag == "Tree")
             {
@@ -54,6 +56,13 @@ public class movement : MonoBehaviour {
                 text.transform.position = newPosText;
             } 
         }
+    public void Search()
+    {
+        Vector3 pos = this.gameObject.transform.position;
+        pos.y += 5f;
+        this.gameObject.transform.position = pos;
+        Debug.Log("Search TEST");
+    }   
         
 }
 
