@@ -392,6 +392,8 @@ MonoBehaviour:
   ObjectToBeCloned: {fileID: 55851021189295717, guid: 8dccaa086fd374e6984261b9301d6220,
     type: 3}
   move: {x: 0, y: 0, z: 3}
+  minZ: -1
+  maxZ: 1
 --- !u!20 &1362433855
 Camera:
   m_ObjectHideFlags: 0

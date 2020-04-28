@@ -50,7 +50,7 @@ public class movement : MonoBehaviour {
                 //collision.gameObject.GetComponent<Collider>().enabled = false;
                 GameObject text = tree.transform.Find("Profile_Text").gameObject;
                 Vector3 posText = text.transform.position;
-                Vector3 newPosText = new Vector3(posText.x, posText.y + Random.Range(-1,1), posText.z);
+                Vector3 newPosText = new Vector3(posText.x, posText.y + Random.Range(minZ,maxZ), posText.z);
                 text.transform.position = newPosText;
             } 
         }
