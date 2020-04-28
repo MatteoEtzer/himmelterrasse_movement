@@ -10,16 +10,21 @@ public class movement : MonoBehaviour {
     public Vector3 move;
     public int minZ;
     public int maxZ;  
-    public Button SearchButton;
 
- 
-    // Use this for initialization
+    public Button SearchButton;
+    public Transform target;
+    public float smoothTime = 0.3F;
+    private Vector3 velocity = Vector3.zero;
+    public bool SearchButtonClicked = false;
+
+    public string[] Namensliste;
+    
+    
     void Start () 
     {
-       
+
     }
  
-    // Update is called once per frame
     void Update () {
         
         if (Input.GetKey (KeyCode.LeftShift) && Input.GetKey ("w")) {
@@ -41,7 +46,12 @@ public class movement : MonoBehaviour {
         if (Input.GetKey (KeyCode.Space)){
         transform.position += transform.TransformDirection (Vector3.up) * Time.deltaTime * movementSpeed * 1.5f;
         }
-       
+        if (SearchButtonClicked == true)
+        {
+            Vector3 targetPosition = target.TransformPoint(new Vector3(0, 0, 0));
+            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+        }
+        
     }
 
     void OnTriggerEnter(Collider collision)
@@ -58,10 +68,8 @@ public class movement : MonoBehaviour {
         }
     public void Search()
     {
-        Vector3 pos = this.gameObject.transform.position;
-        pos.y += 5f;
-        this.gameObject.transform.position = pos;
-        Debug.Log("Search TEST");
+        SearchButtonClicked = true;
+        Debug.Log("Button clicked");
     }   
         
 }
