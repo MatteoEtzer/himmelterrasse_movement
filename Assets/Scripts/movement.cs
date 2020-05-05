@@ -29,7 +29,7 @@ public class movement : MonoBehaviour {
     void Update () {
         
         if (Input.GetKey (KeyCode.LeftShift) && Input.GetKey ("w")) {
-            transform.position += transform.TransformDirection (Vector3.forward) * Time.deltaTime * movementSpeed * 2.5f;
+            transform.position += transform.TransformDirection (Vector3.forward) * Time.deltaTime * movementSpeed * 5f;
         }   else if (Input.GetKey ("w") && !Input.GetKey (KeyCode.LeftShift)) {
             transform.position += transform.TransformDirection (Vector3.forward) * Time.deltaTime * movementSpeed;
         } else if (Input.GetKey ("s")) {
