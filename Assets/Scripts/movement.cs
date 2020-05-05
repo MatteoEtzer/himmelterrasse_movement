@@ -21,7 +21,6 @@ public class movement : MonoBehaviour {
     public string[] Namensliste;
     
     
-    
     void Start () 
     {
 
@@ -48,16 +47,16 @@ public class movement : MonoBehaviour {
         if (Input.GetKey (KeyCode.Space)){
         transform.position += transform.TransformDirection (Vector3.up) * Time.deltaTime * movementSpeed * 1.5f;
         }
-        if (SearchButtonClicked == true)
+
+        if (SearchButtonClicked == true) 
         {
-            Vector3 targetPosition = CloudTarget.TransformPoint(new Vector3(0, 0, 0));
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
-            
+        StartCoroutine("SearchAnimation");
+        SearchButtonClicked = false;
         }
         if (ReturnButtonClicked == true)
         {
-            Vector3 targetPosition = TreeTarget.TransformPoint(new Vector3(0, 0, 0));
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+        StartCoroutine("ReturnAnimation");
+        ReturnButtonClicked = false;
         }
     }
 
@@ -76,20 +75,30 @@ public class movement : MonoBehaviour {
     public void Search()
     {
         SearchButtonClicked = true;
-        Debug.Log("Button clicked");
+        Debug.Log("Search-Button clicked");
     }   
+    IEnumerator SearchAnimation()
+    {
+        for (float ft = 10f; ft >= 0; ft -= 0.1f)
+        {
+            Vector3 targetPosition = CloudTarget.TransformPoint(new Vector3(0, 0, 0));
+            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime); 
+            yield return null;
+        }
+    }
+    IEnumerator ReturnAnimation()
+    {
+        for (float ft = 10f; ft >= 0; ft -= 0.1f)
+        {
+            Vector3 targetPosition = TreeTarget.TransformPoint(new Vector3(0, 0, 0));
+            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+            yield return null;
+        }
+    }
     public void ReturnToTree()
     {
         ReturnButtonClicked = true;
+        Debug.Log("Return-Button clicked");
+
     }    
 }
-
-
-/*else if(_move.sqrMagnitude > 0f)
-    {
-        //ease out
-        _move *= 0.5f;
-        transform.Translate(_move * Time.deltaTime);
-        //once we've reached a slow enough speed, zero out
-        if(_move.magnitude < 0.01f) _move = Vector3.zero;
-    }*/

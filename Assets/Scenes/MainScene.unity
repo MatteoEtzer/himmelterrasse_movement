@@ -3736,14 +3736,18 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5589768476064583721, guid: 8dccaa086fd374e6984261b9301d6220,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 86494235521945812, guid: 8dccaa086fd374e6984261b9301d6220,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dccaa086fd374e6984261b9301d6220, type: 3}
---- !u!4 &677293412 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1263250868116664762, guid: 8dccaa086fd374e6984261b9301d6220,
-    type: 3}
-  m_PrefabInstance: {fileID: 677293411}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &700657070
 GameObject:
   m_ObjectHideFlags: 0
@@ -6960,7 +6964,7 @@ MonoBehaviour:
   move: {x: 0, y: 0, z: 3}
   minZ: -1
   maxZ: 1
-  CloudTarget: {fileID: 677293412}
+  CloudTarget: {fileID: 1955774981}
   TreeTarget: {fileID: 2035658856}
   smoothTime: 0.3
   SearchButtonClicked: 0
@@ -7083,6 +7087,7 @@ Transform:
   - {fileID: 159932746}
   - {fileID: 1313119616}
   - {fileID: 1016953968}
+  - {fileID: 1955774981}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10168,6 +10173,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940920834}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1955774980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1955774981}
+  m_Layer: 0
+  m_Name: TargetClouds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1955774981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955774980}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5699997, z: -8.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1379127433}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1973948067
 GameObject:
   m_ObjectHideFlags: 0
