@@ -99,6 +99,5 @@ public class movement : MonoBehaviour {
     {
         ReturnButtonClicked = true;
         Debug.Log("Return-Button clicked");
-
     }    
 }
