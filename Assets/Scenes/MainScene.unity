@@ -6965,7 +6965,7 @@ MonoBehaviour:
   minZ: -1
   maxZ: 1
   CloudTarget: {fileID: 1955774981}
-  TreeTarget: {fileID: 2035658856}
+  TreeTarget: {fileID: 1390787687}
   smoothTime: 0.3
   SearchButtonClicked: 0
   ReturnButtonClicked: 0
@@ -7182,6 +7182,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383119750}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1390787687 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5589768476064583721, guid: 8dccaa086fd374e6984261b9301d6220,
+    type: 3}
+  m_PrefabInstance: {fileID: 677293411}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1416810326
 GameObject:
   m_ObjectHideFlags: 0
@@ -10658,12 +10664,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028780529}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &2035658856 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5589768476064583721, guid: 8dccaa086fd374e6984261b9301d6220,
-    type: 3}
-  m_PrefabInstance: {fileID: 677293411}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2036572968
 GameObject:
   m_ObjectHideFlags: 0
