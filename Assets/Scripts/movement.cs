@@ -74,6 +74,7 @@ public class movement : MonoBehaviour {
         }
     public void Search()
     {
+        TreeTarget.position = this.transform.position;
         SearchButtonClicked = true;
         Debug.Log("Search-Button clicked");
     }   
