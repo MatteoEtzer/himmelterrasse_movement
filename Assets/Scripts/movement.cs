@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.Debug;
 
 public class movement : MonoBehaviour {
  
@@ -18,14 +20,20 @@ public class movement : MonoBehaviour {
     public bool SearchButtonClicked = false;
     public bool ReturnButtonClicked = false;
 
+    public GameObject SearchButton;
+    public GameObject ReturnButton;
+    public GameObject SearchBar;
+    public GameObject OSK;
+
     public string[] Namensliste;
 
-
-
+ 
     
     void Start () 
     {
-
+        SearchBar.SetActive(false);
+        ReturnButton.SetActive(false);
+        OSK.SetActive(false);
     }
  
     void Update () {
@@ -79,6 +87,10 @@ public class movement : MonoBehaviour {
         TreeTarget.position = this.transform.position;
         SearchButtonClicked = true;
         Debug.Log("Search-Button clicked");
+        SearchButton.SetActive(false);
+        ReturnButton.SetActive(true);
+        SearchBar.SetActive(true);
+        OSK.SetActive(true);
     }   
     IEnumerator SearchAnimation()
     {
@@ -102,5 +114,9 @@ public class movement : MonoBehaviour {
     {
         ReturnButtonClicked = true;
         Debug.Log("Return-Button clicked");
+        ReturnButton.SetActive(false);
+        SearchButton.SetActive(true);
+        SearchBar.SetActive(false);
+        OSK.SetActive(false);
     }    
 }
