@@ -25,6 +25,7 @@ public class movement : MonoBehaviour {
     public GameObject SearchBar;
     public GameObject OSK;
 
+    
     public string[] Namensliste;
 
  
@@ -118,5 +119,6 @@ public class movement : MonoBehaviour {
         SearchButton.SetActive(true);
         SearchBar.SetActive(false);
         OSK.SetActive(false);
-    }    
+    }
+  
 }
