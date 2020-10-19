@@ -69,7 +69,7 @@ public class OnScreenKeyboard : MonoBehaviour {
 
     public void SetBackgroundColor(Color32 c)
     {
-        gameObject.GetComponent<Image>().color = c;
+        //gameObject.GetComponent<Image>().color = c;
     }
 
     public void SetMainSprite(Sprite s)
