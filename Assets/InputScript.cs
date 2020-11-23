@@ -16,6 +16,15 @@ public class InputScript : MonoBehaviour
     public float smoothTime = 0.3F;
     private Vector3 velocity = Vector3.zero;
 
+    public KeyCode moveForwardKey;
+    public KeyCode moveBackwardKey;
+    public KeyCode moveRightKey;
+    public KeyCode moveLeftKey;
+
+    //public SwipeInput Touch;
+
+    public Vector3 pos;      
+
     void Start()
     {
         SearchBar.SetActive(false);
@@ -36,6 +45,29 @@ public class InputScript : MonoBehaviour
             StartCoroutine("ReturnAnimation");
             ReturnButtonClicked = false;
         }
+        pos = this.transform.position;
+
+
+        if (Input.GetKey(moveForwardKey)) // || SwipeInput.swipedUp == true)
+        {
+            this.transform.position = new Vector3(pos.x,pos.y,pos.z + (Time.deltaTime));
+        }
+        
+        if (Input.GetKey(moveBackwardKey)) // || SwipeInput.swipedUp == true)
+        {
+            this.transform.position = new Vector3(pos.x,pos.y,pos.z - (Time.deltaTime));
+        }
+
+        if (Input.GetKey(moveLeftKey)) // || SwipeInput.swipedUp == true)
+        {
+            this.transform.position = new Vector3(pos.x - (Time.deltaTime), pos.y, pos.z);
+        }
+
+        if (Input.GetKey(moveRightKey)) // || SwipeInput.swipedUp == true)
+        {
+            this.transform.position = new Vector3(pos.x + (Time.deltaTime), pos.y, pos.z);
+        }
+
     }
 
     public void Search()
@@ -77,4 +109,6 @@ public class InputScript : MonoBehaviour
         SearchBar.SetActive(false);
         OSK.SetActive(false);
     }
+
+    
 }
