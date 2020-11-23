@@ -1480,10 +1480,7 @@ MonoBehaviour:
   SearchButtonClicked: 0
   ReturnButtonClicked: 0
   smoothTime: 0.3
-  moveForwardKey: 119
-  moveBackwardKey: 115
-  moveRightKey: 100
-  moveLeftKey: 97
+  dragSpeed: 2
   pos: {x: 0, y: 0, z: 0}
 --- !u!1001 &1016145445
 PrefabInstance:

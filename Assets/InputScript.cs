@@ -15,13 +15,10 @@ public class InputScript : MonoBehaviour
     public bool ReturnButtonClicked = false;
     public float smoothTime = 0.3F;
     private Vector3 velocity = Vector3.zero;
+   
+    public float dragSpeed = 1;
+    private Vector3 dragOrigin;
 
-    // public KeyCode moveForwardKey;
-    // public KeyCode moveBackwardKey;
-    // public KeyCode moveRightKey;
-    // public KeyCode moveLeftKey;
-
-    //public SwipeInput Touch;
 
     public Vector3 pos;      
 
@@ -34,6 +31,25 @@ public class InputScript : MonoBehaviour
 
     void Update()
     {
+        //dragging implementation
+        if (Input.GetMouseButtonDown(0))
+        {
+            dragOrigin = Input.mousePosition;
+            return;
+        }
+ 
+        if (!Input.GetMouseButton(0)) return;
+ 
+        Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - dragOrigin);
+        Vector3 move = new Vector3(pos.x * -dragSpeed, 0, pos.y * -dragSpeed);
+ 
+        transform.Translate(move, Space.World);
+
+        //end of dragging
+
+
+        //search fields
+
         if (SearchButtonClicked == true) 
         {
             StartCoroutine("SearchAnimation");
@@ -45,30 +61,10 @@ public class InputScript : MonoBehaviour
             StartCoroutine("ReturnAnimation");
             ReturnButtonClicked = false;
         }
-        // pos = this.transform.position;
-
-
-        // if (Input.GetKey(moveForwardKey)) // || SwipeInput.swipedUp == true)
-        // {
-        //     this.transform.position = new Vector3(pos.x,pos.y,pos.z + (Time.deltaTime));
-        // }
-        
-        // if (Input.GetKey(moveBackwardKey)) // || SwipeInput.swipedUp == true)
-        // {
-        //     this.transform.position = new Vector3(pos.x,pos.y,pos.z - (Time.deltaTime));
-        // }
-
-        // if (Input.GetKey(moveLeftKey)) // || SwipeInput.swipedUp == true)
-        // {
-        //     this.transform.position = new Vector3(pos.x - (Time.deltaTime), pos.y, pos.z);
-        // }
-
-        // if (Input.GetKey(moveRightKey)) // || SwipeInput.swipedUp == true)
-        // {
-        //     this.transform.position = new Vector3(pos.x + (Time.deltaTime), pos.y, pos.z);
-        // }
+        pos = this.transform.position;
 
     }
+
 
     public void Search()
     {
