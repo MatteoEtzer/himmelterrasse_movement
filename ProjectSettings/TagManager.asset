@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Tree
+  - dbHandler
+  - inst
   layers:
   - Default
   - TransparentFX
