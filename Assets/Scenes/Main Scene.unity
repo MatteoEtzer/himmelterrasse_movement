@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 206215557}
   - component: {fileID: 206215556}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Randomize
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,7 +335,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 60.700195}
-  m_SizeDelta: {x: 600, y: 200}
+  m_SizeDelta: {x: 500, y: 56.3}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &206215556
 MonoBehaviour:
@@ -412,8 +412,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 0ef5627ab3b0048f8ac0b78bdfa0eb74, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -532,7 +532,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.000022888, y: -8.5}
+  m_AnchoredPosition: {x: 0.000022888, y: -22}
   m_SizeDelta: {x: 306.964, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &413697462
@@ -622,8 +622,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 0ef5627ab3b0048f8ac0b78bdfa0eb74, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -710,7 +710,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Home
+  m_Text: "Zur\xFCck"
 --- !u!222 &633509763
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1121,8 +1121,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -31.600098}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -171.5, y: -44.5}
+  m_SizeDelta: {x: 62.2, y: 30}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &820545528
 MonoBehaviour:
@@ -1247,8 +1247,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 4db5d16408054452c83b5531bf527d1b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3099,8 +3099,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 70
+    m_Font: {fileID: 12800000, guid: aaceddc7c680c4445a17a86a0d695786, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 7
@@ -3111,7 +3111,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: THIS IS KNOPF
+  m_Text: Randomize
 --- !u!222 &1508470036
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3671,9 +3671,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2290179638505257043, guid: f790dd0509d11714fbbbbadc68ccd697,
         type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290179638505257043, guid: f790dd0509d11714fbbbbadc68ccd697,
+        type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 0ef5627ab3b0048f8ac0b78bdfa0eb74,
+        type: 3}
     - target: {fileID: 2290179638505257043, guid: f790dd0509d11714fbbbbadc68ccd697,
         type: 3}
       propertyPath: m_Color.a
@@ -3789,13 +3795,14 @@ PrefabInstance:
     - target: {fileID: 2290179638880280263, guid: f790dd0509d11714fbbbbadc68ccd697,
         type: 3}
       propertyPath: m_Type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2290179638880280263, guid: f790dd0509d11714fbbbbadc68ccd697,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: acf63e4f3b79d42e6971defc2717bb91,
+        type: 3}
     - target: {fileID: 2290179638880280263, guid: f790dd0509d11714fbbbbadc68ccd697,
         type: 3}
       propertyPath: m_Color.a
